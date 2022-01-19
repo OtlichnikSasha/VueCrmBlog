@@ -3,7 +3,7 @@
     <div class="heading">
       {{ text }}
     </div>
-    <input class="default_input" :placeholder="text" v-on="$listeners" />
+    <input class="default_input" :placeholder="text" v-on="$listeners" :value="value" />
   </div>
 </template>
 

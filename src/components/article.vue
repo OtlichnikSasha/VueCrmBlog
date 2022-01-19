@@ -2,7 +2,7 @@
   <div class="states__item" >
     <div class="states__item_img">
     <router-link :to="'/article/' + article.id">
-      <img :src="article.main_img" class="states__img" />
+      <img :src="article.main_img" class="states__img" :alt="article.title"/>
     </router-link>
     </div>
     <div class="states__content">
@@ -24,22 +24,41 @@
       <div class="name_and_date">
         <div class="author__items">
           <div class="name_author">
-            <router-link :to="'/author/' + article.author.id">
+            <div>
               {{article.author.surname}} {{article.author.name}}
-              </router-link>
+              </div>
           </div>
         </div>
+      </div>
+      <div class="send_btn" v-on:click="removeArticle(article.id)">
+        Удалить
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import axios from "axios";
+
 export default {
   props:{
     article:{
       type: Object,
       required: true
+    }
+  },
+  methods: {
+    removeArticle: function (id) {
+      let data = {
+        'id': id
+      }
+      axios({
+            url: '/api/article/remove',
+            method: 'delete',
+            data: data
+          }
+      ).then(() => location.reload())
+          .catch((error) => (console.log(error)))
     }
   }
 }
@@ -125,5 +144,8 @@ export default {
   width:50px;
   height:50px;
   border-radius: 50%;
+}
+.states__item .send_btn{
+  background: #fc0739;
 }
 </style>

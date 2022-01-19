@@ -42,8 +42,7 @@ export default {
   data() {
     return {
       articles: [],
-      page: this.$route.params.page === undefined ? 1 : Number(this.$route.params.page),
-      statusArticle: false
+      page: this.$route.params.page === undefined ? 1 : Number(this.$route.params.page)
     }
   },
   mounted() {
@@ -59,7 +58,6 @@ export default {
     Article
   }
 }
-
 
 </script>
 
@@ -100,5 +98,6 @@ export default {
   .pagination_num:hover {
     cursor: pointer;
   }
+
 </style>
 

@@ -43,7 +43,6 @@
 
 import axios from "axios";
 import Input from "@/components/input"
-// import Select from '@/components/select'
 import Textarea from '@/components/textarea'
 
 export default {
@@ -51,8 +50,6 @@ export default {
     return {
       authors: [],
       categories: [],
-      statusAuth: false,
-      statusCat: false,
       article: {
         title: '',
         text: '',
@@ -75,7 +72,6 @@ export default {
   components: {
     Input,
     Textarea,
-    // Select
   },
   methods: {
     createArticle: function () {

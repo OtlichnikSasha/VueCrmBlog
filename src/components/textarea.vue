@@ -6,8 +6,12 @@
     <textarea
         class="default_input"
         :placeholder="text"
+        :value="value"
         v-on="$listeners"
-    ></textarea>
+    >
+
+    </textarea>
+    <!--        -->
   </div>
 </template>
 
@@ -18,10 +22,10 @@ export default {
       type: String,
       required: true
     },
-  },
-  value: {
-    type: String,
-    required: true
+    value: {
+      type: String,
+      required: true
+    }
   }
 }
 </script>

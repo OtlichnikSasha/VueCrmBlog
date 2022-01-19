@@ -14,7 +14,7 @@
       <Input
           text="Введите специальность автора"
           v-bind:value="author.speciality"
-          v-on:input="author.author = $event.target.value"
+          v-on:input="author.speciality = $event.target.value"
       />
       <div class="send_btn" v-on:click="createAuthor">Сохранить</div>
     </div>
